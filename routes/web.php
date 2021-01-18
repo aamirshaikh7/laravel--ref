@@ -18,5 +18,22 @@ Route::get('/', function () {
 });
 
 Route::get('/test', function () {
-    return view('welcome');
+    $name = request('name');
+
+    return view('test', ['name' => $name]);
 });
+
+// Route::get('/posts/{post}', function ($post) {
+//     $posts = [
+//         'first-post' => 'this is first post',
+//         'second-post' => 'this is second post'
+//     ];
+
+//     if (! array_key_exists($post, $posts)) {
+//         abort(404, 'Post not found');
+//     }
+
+//     return view('post', ['post' => $posts[$post]]);
+// });
+
+Route::get('/posts/{post}', 'App\Http\Controllers\PostsController@show');
