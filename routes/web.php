@@ -23,4 +23,8 @@ Route::get('/test', function () {
     return view('test', ['name' => $name]);
 });
 
+Route::get('/about', function () {
+    return view('about');
+});
+
 Route::get('/posts/{slug}', 'App\Http\Controllers\PostsController@show');
