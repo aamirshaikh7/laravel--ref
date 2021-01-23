@@ -24,10 +24,23 @@
             </div>
         </div>
     </nav>
-
-    @yield ('header')
     
     @yield ('content')
+
+    <div class="footer-dark">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 item text">
+                        <h3>Company Name</h3>
+                        <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
+                    </div>
+                    <div class="col item social"><a href="https://github.com/aamirshaikh7"><i class="icon ion-social-github"></i></a><a href="https://linkedin.com/in/aamir-shaikh-291934182/"><i class="icon ion-social-linkedin"></i></a></div>
+                </div>
+                <p class="copyright">Aamir shaikh © 2021</p>
+            </div>
+        </footer>
+    </div>
 
     <script src="js/jquery.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
