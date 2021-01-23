@@ -1,5 +1,7 @@
 @extends ('layout')
 
 @section ('content')
-    <h2>About us</h2>
+    <div class="container-fluid pt-2">
+        <h2>About us</h2>
+    </div>
 @endsection

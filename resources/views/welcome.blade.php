@@ -1,19 +1,6 @@
 @extends ('layout')
 
-@section ('content')
-    <nav class="navbar navbar-light navbar-expand-md sticky-top text-white" style="background: rgb(40,45,50);color: rgb(240,249,255);">
-        <div class="container"><a class="navbar-brand text-light" href="#">LaraBlog.</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse text-uppercase" id="navcol-1">
-                <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link text-light" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link text-light" href="#">About</a></li>
-                    <li class="nav-item"><a class="nav-link text-light" href="#">Contact us</a></li>
-                    <li class="nav-item"><a class="nav-link text-light" href="#">Something</a></li>
-                    <li class="nav-item"><a class="nav-link text-light" href="#">Demo</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+@section ('header')
     <div class="jumbotron">
         <div class="container">
             <h1 class="text-center" style="margin-top: 80px;">LaraBlog</h1>
@@ -22,6 +9,9 @@
             <p class="text-center"><a class="btn btn-primary border rounded-pill border-primary shadow-sm" role="button" style="font-size: 18px;">Learn more</a></p>
         </div>
     </div>
+@endsection
+
+@section ('content')
     <div class="pb-3">
         <div class="container">
             <div class="row">
