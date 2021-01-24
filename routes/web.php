@@ -24,10 +24,12 @@ Route::get('/test', function () {
     return view('test', ['name' => $name]);
 });
 
+Route::get('/posts/{slug}', 'App\Http\Controllers\PostsController@show');
+
 Route::get('/about', function () {
     $articles = Article::take(3)->latest()->get();
 
     return view('about', ['articles' => $articles]);
 });
 
-Route::get('/posts/{slug}', 'App\Http\Controllers\PostsController@show');
+Route::get('/articles/{article}', 'App\Http\Controllers\ArticlesController@show');

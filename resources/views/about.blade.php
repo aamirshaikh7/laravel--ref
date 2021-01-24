@@ -1,7 +1,7 @@
 @extends ('layout')
 
 @section ('content')
-    <div class="pb-3 pt-4">
+    <div class="pb-4 pt-4">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-lg-6">
@@ -15,7 +15,7 @@
 
                     @foreach ($articles as $article)
                         <div class="pb-2">
-                            <h2 class="text-uppercase"><a href="">{{ $article->title }}</a></h2>
+                            <h2 class="text-uppercase"><a href="/articles/{{ $article->id }}">{{ $article->title }}</a></h2>
                             <p>{{ $article->body }}</p>
                             <p>- {{ $article->author }}</p>
                         </div>
@@ -29,33 +29,6 @@
                         <p><a href="#" style="font-size: 16px;">An example of a post bla bla bla..</a></p>
                         <p><a href="#" style="font-size: 16px;">An example of a post bla bla bla..</a></p>
                         <p><a href="#" style="font-size: 16px;">An example of a post bla bla bla..</a></p>
-                        <p><a href="#" style="font-size: 16px;">An example of a post bla bla bla..</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 pt-2">
-                    <div>
-                        <h2 class="text-uppercase">Heading</h2>
-                        <p><a href="#" style="font-size: 16px;">An example of a post bla bla bla..</a></p>
-                    </div>
-                    <hr>
-                    <div class="pt-2">
-                        <h2 class="text-uppercase">Heading</h2>
-                        <p><a href="#" style="font-size: 16px;">An example of a post bla bla bla..</a></p>
-                    </div>
-                    <hr>
-                    <div class="pt-2">
-                        <h2 class="text-uppercase">Heading</h2>
-                        <p style="font-size: 16px;"><a href="#" style="font-size: 20px;">An example of a post bla bla bla..</a></p>
-                    </div>
-                    <hr>
-                    <div class="pt-2">
-                        <h2 class="text-uppercase">Heading</h2>
                         <p><a href="#" style="font-size: 16px;">An example of a post bla bla bla..</a></p>
                     </div>
                 </div>

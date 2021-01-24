@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>LaraBlog</title>
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="fonts/ionicons.min.css">
-    <link rel="stylesheet" href="css/styles.min.css">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="/css/styles.min.css">
 </head>
 
 <body>
@@ -17,8 +17,8 @@
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item"><a class="nav-link {{ Request::path() === '/' ? 'active' : '' }}" href="/">Home</a></li>
                     <li class="nav-item"><a class="nav-link {{ Request::path() === 'clients' ? 'active' : '' }}" href="/clients">Clients</a></li>
-                    <li class="nav-item"><a class="nav-link {{ Request::path() === 'careers' ? 'active' : '' }}" href="/careers">Careers</a></li>
                     <li class="nav-item"><a class="nav-link {{ Request::path() === 'about' ? 'active' : '' }}" href="/about">About</a></li>
+                    <li class="nav-item"><a class="nav-link {{ Request::path() === 'articles' ? 'active' : '' }}" href="/articles">Articles</a></li>
                     <li class="nav-item"><a class="nav-link {{ Request::path() === 'contact' ? 'active' : '' }}" href="/contact">Contact</a></li>
                 </ul>
             </div>
@@ -42,8 +42,8 @@
         </footer>
     </div>
 
-    <script src="js/jquery.min.js"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
 </body>
 
 </html>
