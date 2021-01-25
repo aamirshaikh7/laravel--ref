@@ -18,4 +18,22 @@ class ArticlesController extends Controller
 
         return view('articles.show', ['article' => $article]);
     }
+
+    public function create () {
+        return view('articles.create');
+    }
+
+    public function store () {
+        // dd(request()->all());
+
+        $article = new Article();
+        
+        $article->title = request('title');
+        $article->body = request('body');
+        $article->author = request('author');
+
+        $article->save();
+
+        return redirect('/articles');
+    }
 }
