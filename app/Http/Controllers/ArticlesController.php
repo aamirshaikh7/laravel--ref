@@ -24,19 +24,7 @@ class ArticlesController extends Controller
     public function store () {
         // dd(request()->all());
 
-        request()->validate([
-            'title' => 'required | min:3 | max:255',
-            'body' => 'required',
-            'author' => 'required'
-        ]);
-
-        $article = new Article();
-        
-        $article->title = request('title');
-        $article->body = request('body');
-        $article->author = request('author');
-
-        $article->save();
+        Article::create($this->validateArticle());
 
         return redirect('/articles');
     }
@@ -46,18 +34,16 @@ class ArticlesController extends Controller
     }
 
     public function update (Article $article) {
-        request()->validate([
+        $article->update($this->validateArticle());
+
+        return redirect('/articles/' . $article->id);
+    }
+
+    protected function validateArticle () {
+        return request()->validate([
             'title' => 'required | min:3 | max:255',
             'body' => 'required',
             'author' => 'required'
         ]);
-      
-        $article->title = request('title');
-        $article->body = request('body');
-        $article->author = request('author');
-
-        $article->save();
-
-        return redirect('/articles/' . $article->id);
     }
 }
