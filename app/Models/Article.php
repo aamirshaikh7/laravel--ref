@@ -10,4 +10,8 @@ class Article extends Model
     use HasFactory;
 
     protected $fillable = ['title', 'body', 'author'];
+
+    public function path () {
+        return route('articles.show', $this);
+    }
 }
