@@ -17,7 +17,6 @@
                         <div class="pb-2">
                             <h2 class="text-uppercase"><a href="{{ $article->path() }}">{{ $article->title }}</a></h2>
                             <p>{{ $article->body }}</p>
-                            <p>- {{ $article->author }}</p>
                         </div>
                         <hr>
                     @endforeach

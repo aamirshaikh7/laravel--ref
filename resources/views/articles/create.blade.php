@@ -25,14 +25,6 @@
                                 <p class="text-danger mt-1">{{ $errors->first('body') }}</p>
                             @enderror
                         </div>
-                        <div class="form-group pb-2">
-                            <label for="author"><h5 class="text-uppercase">Author</h5></label>
-                            <input type="text" class="@error ('author') border-danger @enderror border rounded form-control" name="author" value="{{ old('author') }}" />
-                            
-                            @error ('author')
-                                <p class="text-danger mt-1">{{ $errors->first('author') }}</p>
-                            @enderror                                            
-                        </div>
                         <div class="form-group text-left"><button class="btn btn-primary text-uppercase text-right bg-dark border rounded" type="submit">Submit</button></div>
                     </form>
                 </div>

@@ -9,9 +9,8 @@
                         @if ($article)
                             <h2 class="text-uppercase">{{ $article->title }}</h2>
                             <p>{{ $article->body }}</p>
-                            <p>- {{ $article->author }}</p>
-                            @else
-                                <h2 class="text-uppercase">Article not found !</h2>
+                        @else
+                            <h2 class="text-uppercase">Article not found !</h2>
                         @endif
                     </div>
                 </div>
