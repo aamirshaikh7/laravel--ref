@@ -18,14 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/test', function () {
-    $name = request('name');
-
-    return view('test', ['name' => $name]);
-});
-
-Route::get('/posts/{slug}', 'App\Http\Controllers\PostsController@show');
-
 Route::get('/about', function () {
     $articles = Article::take(3)->latest()->get();
 
