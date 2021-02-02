@@ -9,6 +9,11 @@
                         @if ($article)
                             <h2 class="text-uppercase">{{ $article->title }}</h2>
                             <p>{{ $article->body }}</p>
+                            <p>
+                                @foreach ($article->tags as $tag)
+                                    <a href="{{ route('articles.index', ['tag' => $tag->name]) }}">{{ $tag->name }}</a>
+                                @endforeach
+                            </p>
                         @else
                             <h2 class="text-uppercase">Article not found !</h2>
                         @endif

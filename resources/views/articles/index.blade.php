@@ -6,13 +6,15 @@
             <div class="row">
                 <div class="col-sm-12">
 
-                    @foreach ($articles as $article)
+                    @forelse ($articles as $article)
                         <div class="pb-2">
                             <h2 class="text-uppercase"><a href="{{ $article->path() }}">{{ $article->title }}</a></h2>
                             <p>{{ $article->body }}</p>
                         </div>
                         <hr>
-                    @endforeach
+                    @empty
+                        <h2 class="text-uppercase">No Articles yet !</h2>
+                    @endforelse
                     
                 </div>
             </div>
