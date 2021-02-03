@@ -11,7 +11,7 @@
                             <p>{{ $article->body }}</p>
                             <p>
                                 @foreach ($article->tags as $tag)
-                                    <a href="{{ route('articles.index', ['tag' => $tag->name]) }}">{{ $tag->name }}</a>
+                                    <a class="pr-2" href="{{ route('articles.index', ['tag' => $tag->name]) }}">{{ $tag->name }}</a>
                                 @endforeach
                             </p>
                         @else

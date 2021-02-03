@@ -9,7 +9,7 @@ class Article extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'body', 'author'];
+    protected $guarded = [];
 
     public function path () {
         return route('articles.show', $this);
@@ -20,6 +20,6 @@ class Article extends Model
     }
     
     public function tags () {
-        return $this->belongsToMany(Tag::class);
+        return $this->belongsToMany(Tag::class)->withTimestamps();
     }
 }
