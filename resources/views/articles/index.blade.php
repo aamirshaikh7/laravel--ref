@@ -5,6 +5,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
+                    @if (request('tag'))
+                        <h2 class="text-uppercase">{{ request('tag') }}</h2>
+                    @endif
+                    
+                    <div class="d-flex justify-content-end">
+                        <a class="btn btn-primary" href="{{ route('articles.create') }}" role="button">Add Article</a>
+                    </div>
 
                     @forelse ($articles as $article)
                         <div class="pb-2">

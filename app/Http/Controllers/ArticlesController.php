@@ -44,11 +44,18 @@ class ArticlesController extends Controller
     }
 
     public function edit (Article $article) {
-        return view('articles.edit', ['article' => $article]);
+        return view('articles.edit', ['article' => $article, 'tags' => Tag::all()]);
     }
 
     public function update (Article $article) {
-        $article->update($this->validateArticle());
+        $this->validateArticle();
+
+        $article->update(request(['title', 'body']));
+        $article->save();
+
+        if (request('tags')) {
+            $article->tags()->attach(request('tags'));
+        }
 
         return redirect($article->path());
     }

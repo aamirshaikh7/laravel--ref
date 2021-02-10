@@ -23,12 +23,9 @@
 
                     <div class="pt-4">
                         <h2 class="text-uppercase">Tags</h2>
-                        <p><a href="#" style="font-size: 16px;">An example of a post bla bla bla..</a></p>
-                        <p><a href="#" style="font-size: 16px;">An example of a post bla bla bla..</a></p>
-                        <p><a href="#" style="font-size: 16px;">An example of a post bla bla bla..</a></p>
-                        <p><a href="#" style="font-size: 16px;">An example of a post bla bla bla..</a></p>
-                        <p><a href="#" style="font-size: 16px;">An example of a post bla bla bla..</a></p>
-                        <p><a href="#" style="font-size: 16px;">An example of a post bla bla bla..</a></p>
+                        @foreach ($tags as $tag)
+                            <p><a href="{{ route('articles.index', ['tag' => $tag->name]) }}" style="font-size: 16px;">{{ $tag->name }}</a></p>
+                        @endforeach
                     </div>
                 </div>
             </div>

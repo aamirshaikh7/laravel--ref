@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Article;
+use App\Models\Tag;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,12 +22,12 @@ Route::get('/', function () {
 Route::get('/about', function () {
     $articles = Article::take(3)->latest()->get();
 
-    return view('about', ['articles' => $articles]);
+    return view('about', ['articles' => $articles, 'tags' => Tag::all()]);
 });
 
 Route::get('/articles', 'App\Http\Controllers\ArticlesController@index')->name('articles.index');
-Route::get('/articles/create', 'App\Http\Controllers\ArticlesController@create');
+Route::get('/articles/create', 'App\Http\Controllers\ArticlesController@create')->name('articles.create');
 Route::post('/articles', 'App\Http\Controllers\ArticlesController@store')->name('articles.store');
 Route::get('/articles/{article}', 'App\Http\Controllers\ArticlesController@show')->name('articles.show');
-Route::get('/articles/{article}/edit', 'App\Http\Controllers\ArticlesController@edit');
-Route::put('/articles/{article}', 'App\Http\Controllers\ArticlesController@update');
+Route::get('/articles/{article}/edit', 'App\Http\Controllers\ArticlesController@edit')->name('articles.edit');
+Route::put('/articles/{article}', 'App\Http\Controllers\ArticlesController@update')->name('articles.update');
