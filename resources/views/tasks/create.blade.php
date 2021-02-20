@@ -5,7 +5,7 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <form method="POST" action="{{ route('articles.store') }}">
+                    <form method="POST" action="">
                         @csrf
 
                         <h2 class="text-uppercase pb-4">Add Article</h2>
@@ -18,23 +18,10 @@
                             @enderror
                         </div>
                         <div class="form-group pb-2">
-                            <label for="body"><h5 class="text-uppercase">Body</h5></label>
-                            <textarea class="@error ('body') border-danger @enderror border rounded form-control" name="body" rows="5">{{ old('body') }}</textarea>
-                            
-                            @error ('body')
-                                <p class="text-danger mt-1">{{ $errors->first('body') }}</p>
-                            @enderror
-                        </div>
-                        <div class="form-group pb-2">
-                            <label for="tags"><h5 class="text-uppercase">Tags</h5></label>
-                            <select name="tags[]" class="browser-default custom-select" multiple>
-                                @foreach ($tags as $tag)
-                                    <option value="{{ $tag->id }}">{{ $tag->name }}</option>
-                                @endforeach
-                            </select>
-                            
-                            @error ('tags')
-                                <p class="text-danger mt-1">{{ $errors->first('tags') }}</p>
+                            <label for="due"><h5 class="text-uppercase">Due date</h5></label>
+                            <input type="date" class="@error ('due') border-danger @enderror border rounded form-control" name="due" value="{{ old('due') }}">
+                            @error ('due')
+                                <p class="text-danger mt-1">{{ $errors->first('due') }}</p>
                             @enderror
                         </div>
                         <div class="form-group text-left"><button class="btn btn-primary text-uppercase text-right bg-dark border rounded" type="submit">Submit</button></div>

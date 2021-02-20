@@ -33,3 +33,4 @@ Route::get('/articles/{article}/edit', 'App\Http\Controllers\ArticlesController@
 Route::put('/articles/{article}', 'App\Http\Controllers\ArticlesController@update')->name('articles.update');
 
 Route::get('/tasks', 'App\Http\Controllers\TasksController@index')->name('tasks.index');
+Route::get('/tasks/create', 'App\Http\Controllers\TasksController@create')->name('tasks.create');

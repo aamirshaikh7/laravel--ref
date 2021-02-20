@@ -3,9 +3,9 @@
 @section ('content')
     <div class="pb-4 pt-4">
         <div class="container">
-            {{-- <div class="d-flex justify-content-end pb-4">
+            <div class="d-flex justify-content-end pb-4">
                 <a class="btn btn-primary" href="{{ route('tasks.create') }}" role="button">Add Task</a>
-            </div> --}}
+            </div>
 
             <div class="table-responsive">
                 <table class="table">
