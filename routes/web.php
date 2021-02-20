@@ -31,3 +31,5 @@ Route::post('/articles', 'App\Http\Controllers\ArticlesController@store')->name(
 Route::get('/articles/{article}', 'App\Http\Controllers\ArticlesController@show')->name('articles.show');
 Route::get('/articles/{article}/edit', 'App\Http\Controllers\ArticlesController@edit')->name('articles.edit');
 Route::put('/articles/{article}', 'App\Http\Controllers\ArticlesController@update')->name('articles.update');
+
+Route::get('/tasks', 'App\Http\Controllers\TasksController@index')->name('tasks.index');
