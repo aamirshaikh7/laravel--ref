@@ -5,10 +5,10 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <form method="POST" action="">
+                    <form method="POST" action="{{ route('tasks.store') }}">
                         @csrf
 
-                        <h2 class="text-uppercase pb-4">Add Article</h2>
+                        <h2 class="text-uppercase pb-4">Add Task</h2>
                         <div class="form-group pb-2">
                             <label for="title"><h5 class="text-uppercase">Title</h5></label>
                             <input type="text" class="@error ('title') border-danger @enderror border rounded form-control" name="title" value="{{ old('title') }}" />
