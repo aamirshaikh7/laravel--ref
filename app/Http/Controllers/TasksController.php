@@ -27,6 +27,10 @@ class TasksController extends Controller
         return redirect(route('tasks.index'));
     }
 
+    public function edit (Task $task) {
+        return view('tasks.edit', ['task' => $task]);
+    }
+
     protected function validateTask () {
         return request()->validate([
             'title' => 'required | min:3 | max:255',

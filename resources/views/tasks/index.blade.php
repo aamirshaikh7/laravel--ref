@@ -12,6 +12,7 @@
                     <thead>
                         <tr>
                             <th>Title</th>
+                            <th>Created by</th>
                             <th>Due</th>
                             <th>Status</th>
                             <th></th>
@@ -21,9 +22,10 @@
                         @forelse ($tasks as $task)
                         <tr>
                             <td>{{ $task->title }}</td>
+                            <td>{{ $task->user->name }}</td>
                             <td>{{ \Carbon\Carbon::parse($task->due)->format('d/M/Y') }}</td>
                             <td>@if ($task->is_completed) Completed @else Not Completed @endif</td>
-                            <td><button class="btn btn-warning" type="button">Edit</button></td>
+                            <td><a class="btn btn-warning" href="{{ route('tasks.edit', $task) }}" role="button">Edit</a></td>
                         </tr>
                         @empty
                             <h2 class="text-uppercase">No Tasks yet !</h2>
