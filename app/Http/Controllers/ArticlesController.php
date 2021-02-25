@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Article;
 use App\Models\Tag;
+use App\Models\User;
 
 class ArticlesController extends Controller
 {
@@ -13,6 +14,12 @@ class ArticlesController extends Controller
             $tag = Tag::where('name', request('tag'))->firstOrFail();
 
             $articles = $tag->articles;
+
+        } elseif (request('author')) {
+            $author = User::where('name', request('author'))->firstOrFail();
+
+            $articles = $author->articles;
+
         } else {
             $articles = Article::latest()->get();
         }

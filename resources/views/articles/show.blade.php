@@ -9,6 +9,7 @@
                         @if ($article)
                             <h2 class="text-uppercase">{{ $article->title }}</h2>
                             <p>{{ $article->body }}</p>
+                            <p>Created by : <a href="{{ route('articles.index', ['author' => $article->user->name]) }}">{{ $article->user->name }}</a></p>
                             <div class="d-flex justify-content-end">
                                 <a class="btn btn-primary" href="{{ route('articles.edit', $article) }}" role="button">Edit</a>
                             </div>
