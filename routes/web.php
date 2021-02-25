@@ -36,3 +36,4 @@ Route::get('/tasks', 'App\Http\Controllers\TasksController@index')->name('tasks.
 Route::get('/tasks/create', 'App\Http\Controllers\TasksController@create')->name('tasks.create');
 Route::post('/tasks', 'App\Http\Controllers\TasksController@store')->name('tasks.store');
 Route::get('/tasks/{task}/edit', 'App\Http\Controllers\TasksController@edit')->name('tasks.edit');
+Route::put('/tasks/{task}', 'App\Http\Controllers\TasksController@update')->name('tasks.update');

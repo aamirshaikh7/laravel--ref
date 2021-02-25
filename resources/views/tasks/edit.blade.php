@@ -5,7 +5,7 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <form method="POST" action="">
+                    <form method="POST" action="{{ route('tasks.update', $task) }}">
                         @csrf
                         @method('PUT')
 

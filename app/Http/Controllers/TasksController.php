@@ -31,6 +31,14 @@ class TasksController extends Controller
         return view('tasks.edit', ['task' => $task]);
     }
 
+    public function update (Task $task) {
+        $task->update($this->validateTask());
+
+        $task->save();
+
+        return redirect(route('tasks.index'));
+    }
+
     protected function validateTask () {
         return request()->validate([
             'title' => 'required | min:3 | max:255',
