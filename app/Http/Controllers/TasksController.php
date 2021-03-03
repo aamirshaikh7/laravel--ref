@@ -4,12 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Task;
+use App\Models\User;
 
 class TasksController extends Controller
 {
     public function index () {
-        $tasks = Task::latest()->get();
-        
+        if (request('author')) {
+            $author = User::where('name', request('author'))->firstOrFail();
+
+            $tasks = $author->tasks;
+        } else {
+            $tasks = Task::latest()->get();
+        }
+
         return view('tasks.index', ['tasks' => $tasks]);
     }
 

@@ -22,7 +22,7 @@
                         @forelse ($tasks as $task)
                         <tr>
                             <td>{{ $task->title }}</td>
-                            <td>{{ $task->user->name }}</td>
+                            <td><a href="{{ route('tasks.index', ['author' => $task->user->name]) }}">{{ $task->user->name }}</a></td>
                             <td>{{ \Carbon\Carbon::parse($task->due)->format('d/M/Y') }}</td>
                             <td>@if ($task->is_completed) Completed @else Not Completed @endif</td>
                             <td><a class="btn btn-warning" href="{{ route('tasks.edit', $task) }}" role="button">Edit</a></td>
