@@ -7,6 +7,12 @@
                 <a class="btn btn-primary" href="{{ route('tasks.create') }}" role="button">Add Task</a>
             </div>
 
+            @if (request('author'))
+                <div class="pb-4">
+                    <h3>Author : <strong>{{ request('author') }}</strong></h3>
+                </div>
+            @endif
+
             <div class="table-responsive">
                 <table class="table">
                     <thead>

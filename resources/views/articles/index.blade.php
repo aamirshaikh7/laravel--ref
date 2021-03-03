@@ -5,13 +5,19 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                    @if (request('tag'))
-                        <h2 class="text-uppercase">{{ request('tag') }}</h2>
-                    @endif
-                    
-                    <div class="d-flex justify-content-end">
+                    <div class="d-flex justify-content-end pb-4">
                         <a class="btn btn-primary" href="{{ route('articles.create') }}" role="button">Add Article</a>
                     </div>
+
+                    @if (request('author'))
+                        <div class="pb-4">
+                            <h3>Author : <strong>{{ request('author') }}</strong></h3>
+                        </div>
+                    @elseif (request('tag'))
+                        <div class="pb-4">
+                            <h3>Tag : <strong>{{ request('tag') }}</strong></h3>
+                        </div>
+                    @endif
 
                     @forelse ($articles as $article)
                         <div class="pb-2">
