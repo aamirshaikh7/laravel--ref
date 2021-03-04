@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/fonts/ionicons.min.css">
     <link rel="stylesheet" href="/css/styles.min.css">
+
+    <style>
+        .nav-link:active {
+            background: none;
+        }
+    </style>
 </head>
 
 <body>
