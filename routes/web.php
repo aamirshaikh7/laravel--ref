@@ -16,7 +16,19 @@ use App\Models\Tag;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $container = new \App\Container();
+
+    $container->add('test', function () {
+        return new \App\Test();
+    });
+
+    $get = $container->get('test');
+
+    $get->call();
+
+    ddd($get);
+    
+    // return view('welcome');
 });
 
 Route::get('/about', function () {
