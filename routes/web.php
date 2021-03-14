@@ -16,6 +16,10 @@ use App\Models\Tag;
 */
 
 Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/service-container', function () {
     $container = new \App\Container();
 
     $container->add('test', function () {
@@ -27,8 +31,6 @@ Route::get('/', function () {
     $get->call();
 
     ddd($get);
-    
-    // return view('welcome');
 });
 
 Route::get('/about', function () {
