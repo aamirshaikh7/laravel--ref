@@ -20,17 +20,11 @@ Route::get('/', function () {
 });
 
 Route::get('/service-container', function () {
-    $container = new \App\Container();
-
-    $container->add('test', function () {
-        return new \App\Test();
-    });
-
-    $get = $container->get('test');
-
-    $get->call();
-
-    ddd($get);
+    // app()->bind('test', function () {
+    //     return new \App\Test();
+    // });
+    
+    ddd(resolve(App\Test::class));
 });
 
 Route::get('/about', function () {

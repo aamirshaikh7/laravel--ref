@@ -3,7 +3,9 @@
 namespace App;
 
 class Test {
-    public function call() {
-        dump('called');
+    protected $dependency;
+
+    public function __construct(Dependency $dependency) {
+        $this->dependency = $dependency;
     }
 }
