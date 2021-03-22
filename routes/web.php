@@ -19,14 +19,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/service-container', function () {
-    // app()->bind('test', function () {
-    //     return new \App\Test();
-    // });
-    
-    ddd(resolve(App\Test::class));
-});
-
 Route::get('/about', function () {
     $articles = Article::take(3)->latest()->get();
 

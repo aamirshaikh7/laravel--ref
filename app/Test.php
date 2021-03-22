@@ -3,9 +3,13 @@
 namespace App;
 
 class Test {
-    protected $dependency;
+    protected $pass;
 
-    public function __construct(Dependency $dependency) {
-        $this->dependency = $dependency;
+    public function __construct($pass) {
+        $this->pass = $pass;
+    }
+
+    public function test() {
+        dd('tested');
     }
 }
