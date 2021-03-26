@@ -25,6 +25,9 @@ Route::get('/about', function () {
     return view('about', ['articles' => $articles, 'tags' => Tag::all()]);
 });
 
+Route::get('/contact', 'App\Http\Controllers\ContactController@show')->name('contact.show');
+Route::post('/contact', 'App\Http\Controllers\ContactController@store')->name('contact.store');
+
 Route::get('/articles', 'App\Http\Controllers\ArticlesController@index')->name('articles.index');
 Route::get('/articles/create', 'App\Http\Controllers\ArticlesController@create')->name('articles.create');
 Route::post('/articles', 'App\Http\Controllers\ArticlesController@store')->name('articles.store');
