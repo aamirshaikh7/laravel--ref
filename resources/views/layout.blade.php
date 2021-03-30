@@ -10,8 +10,13 @@
     <link rel="stylesheet" href="/css/styles.min.css">
 
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
         .nav-link:active {
             background: none;
+        }
+
+        body {
+            font-family: Lato, sans-serif;
         }
     </style>
 </head>
@@ -21,11 +26,12 @@
         <div class="container"><a class="navbar-brand text-light" href="/">LaraBlog.</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse text-uppercase" id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link {{ Request::path() === '/' ? 'active' : '' }}" href="/">Home</a></li>
-                    <li class="nav-item"><a class="nav-link {{ Request::path() === 'tasks' ? 'active' : '' }}" href="/tasks">Tasks</a></li>
-                    <li class="nav-item"><a class="nav-link {{ Request::path() === 'about' ? 'active' : '' }}" href="/about">About</a></li>
-                    <li class="nav-item"><a class="nav-link {{ Request::path() === 'articles' ? 'active' : '' }}" href="/articles">Articles</a></li>
-                    <li class="nav-item"><a class="nav-link {{ Request::path() === 'contact' ? 'active' : '' }}" href="/contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link text-light {{ Request::path() === '/' ? 'active' : '' }}" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-light {{ Request::path() === 'tasks' ? 'active' : '' }}" href="/tasks">Tasks</a></li>
+                    <li class="nav-item"><a class="nav-link text-light {{ Request::path() === 'about' ? 'active' : '' }}" href="/about">About</a></li>
+                    <li class="nav-item"><a class="nav-link text-light {{ Request::path() === 'articles' ? 'active' : '' }}" href="/articles">Articles</a></li>
+                    <li class="nav-item"><a class="nav-link text-light {{ Request::path() === 'subscribe' ? 'active' : '' }}" href="/subscribe">Subscribe</a></li>
+                    <li class="nav-item"><a class="nav-link text-light {{ Request::path() === 'contact' ? 'active' : '' }}" href="/contact">Contact</a></li>
                 </ul>
             </div>
         </div>

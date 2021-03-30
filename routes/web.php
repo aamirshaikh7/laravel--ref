@@ -28,6 +28,9 @@ Route::get('/about', function () {
 Route::get('/contact', 'App\Http\Controllers\ContactController@show')->name('contact.show');
 Route::post('/contact', 'App\Http\Controllers\ContactController@store')->name('contact.store');
 
+Route::get('/subscribe', 'App\Http\Controllers\SubscribeController@show')->name('subscribe.show');
+Route::post('/subscribe', 'App\Http\Controllers\SubscribeController@store')->name('subscribe.store');
+
 Route::get('/articles', 'App\Http\Controllers\ArticlesController@index')->name('articles.index');
 Route::get('/articles/create', 'App\Http\Controllers\ArticlesController@create')->name('articles.create');
 Route::post('/articles', 'App\Http\Controllers\ArticlesController@store')->name('articles.store');

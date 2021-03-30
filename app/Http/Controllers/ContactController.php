@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use App\Mail\Contact;
 
 class ContactController extends Controller
 {
@@ -18,11 +19,7 @@ class ContactController extends Controller
             'message' => 'required | max:500'
         ]);
 
-        $name = request('name');
-        $email = request('email');
-        $message = request('message');
-
-        Mail::raw($message, function ($msg) {
+        Mail::raw(request('message'), function ($msg) {
             $msg->from(request('email'))
                 ->to('aamir@email.com')
                 ->subject('Contact');
