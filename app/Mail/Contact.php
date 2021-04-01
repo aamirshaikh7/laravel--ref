@@ -30,7 +30,7 @@ class Contact extends Mailable
      */
     public function build()
     {
-        return $this->view('html-emails.contact')
+        return $this->markdown('html-emails.contact')
                 ->subject('Information about the latest course');
     }
 }
