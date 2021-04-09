@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Subscriber;
-use Illuminate\Support\Facades\Notification;
-use App\Notifications\UserSubscribed;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\Contact;
 
 class SubscribeController extends Controller
 {
@@ -19,7 +19,8 @@ class SubscribeController extends Controller
             'email' => 'required | email'
         ]));
 
-        Notification::route('email', request('email'))->notify(new UserSubscribed());
+        Mail::to(request('email'))
+            ->send(new Contact('http://laravel-8-course.com/'));
         
         return redirect(route('subscribe.show'))->with('message', 'You are now subscribed, check your email for the latest course link');
     }
